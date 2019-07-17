@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import PhotoCard from "./Components/PhotoCard"
+import PhotoGrid from "./Components/PhotoGrid"
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
       <p>
       Photos of the day
       </p>
-      <PhotoCard/>
+      <PhotoGrid/>
     </div>
   );
 }
