@@ -19,8 +19,10 @@ function PhotoGrid(){
 
     return (
         <div className = "photo-grid">
+        {/* <button onClick={(date)=>setDate(date -1)}>back</button> */}
         <button onClick={()=>setDate('2012-02-14')}>2012-02-14</button>
         <button onClick={()=>setDate('2012-02-15')}>2012-02-15</button>
+        <button onClick={(date)=>setDate(date +1)}>next</button>
             <form>
                 <input placeholder="Search for date..." ref={input =>setDate(input)}/>
             </form>
