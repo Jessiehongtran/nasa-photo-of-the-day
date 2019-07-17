@@ -21,6 +21,9 @@ function PhotoGrid(){
         <div className = "photo-grid">
         <button onClick={()=>setDate('2012-02-14')}>2012-02-14</button>
         <button onClick={()=>setDate('2012-02-15')}>2012-02-15</button>
+            <form>
+                <input placeholder="Search for date..." ref={input =>setDate(input)}/>
+            </form>
         <PhotoCard key = {setPhotos} imgUrl = {photos}/>
         </div>
     )
