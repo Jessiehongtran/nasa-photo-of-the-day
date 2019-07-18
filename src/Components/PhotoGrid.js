@@ -11,7 +11,7 @@ function PhotoGrid(){
     
     useEffect(()=>{
         axios 
-            .get(`https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=${date}`)
+            .get(`https://api.nasa.gov/planetary/apod?api_key=HpJEx1kZ3eD7MbBaHy0qDJKbMdjIEiAaprSj7Y8u&date=${date}`)
             .then(response => {
                 console.log('response', response)
                 const planetName = response.data.title;
@@ -19,6 +19,8 @@ function PhotoGrid(){
                 const planet = response.data.url;
                 setPhotos(planet)
             })
+            .catch(err=>{
+                console.log('err', err)})
     },[date]);
 
     var today = new Date('2012-02-14')
@@ -40,14 +42,14 @@ function PhotoGrid(){
                 <FirstDateButton>
                     <Button animated='fade'>
                         <Button.Content visible onClick={()=>setDate('2012-02-14')}>2012-02-14</Button.Content>
-                        <Button.Content hidden>Ready?</Button.Content>
+                        <Button.Content hidden>{title}</Button.Content>
                     </Button>
                 </FirstDateButton>
 
                 <SecondDateButton>
                     <Button animated='fade'>
                         <Button.Content visible onClick={()=>setDate('2012-02-15')}>2012-02-15</Button.Content>
-                        <Button.Content hidden>Ready?</Button.Content>
+                        <Button.Content hidden>{title}</Button.Content>
                     </Button>
                 </SecondDateButton>
 
@@ -85,4 +87,7 @@ function PhotoGrid(){
 }
 
 export default PhotoGrid
+
+
+
 
