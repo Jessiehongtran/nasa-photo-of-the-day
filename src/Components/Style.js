@@ -42,3 +42,10 @@ export const Tagline = styled.p`
   font-size: 22px;
   font-family: Verdana, Arial, Helvetica, sans-serif;
   `
+
+export const Instruction = styled.p`
+  color: A52A2A; 
+  font-size: 14px;
+  font-style: italic;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  `
