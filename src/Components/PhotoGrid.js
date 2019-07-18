@@ -2,7 +2,7 @@ import React, { useEffect, useState} from "react";
 import axios from "axios";
 import PhotoCard from "./PhotoCard";
 import { Button, Icon, Label } from 'semantic-ui-react'
-import {FirstDateButton, SecondDateButton, LikeButton} from "./Style"
+import {DateButtons, FirstDateButton, SecondDateButton, LikeButton} from "./Style"
 
 function PhotoGrid(){
     const [title, setTitle]  = useState([]);
@@ -25,6 +25,7 @@ function PhotoGrid(){
 
     return (
         <div className = "photo-grid">
+            <DateButtons>
             {/* <button onClick={(date)=>setDate(date -1)}>back</button> */}
             <FirstDateButton>
                 <Button animated='fade'>
@@ -43,9 +44,12 @@ function PhotoGrid(){
             {/* <button onClick={()=>setDate('2012-02-14')}>2012-02-14</button> */}
             {/* <button onClick={()=>setDate('2012-02-15')}>2012-02-15</button> */}
             {/* <button onClick={(date)=>setDate(date +1)}>next</button> */}
-                <form>
-                    <input placeholder="Search for date..." ref={input =>setDate(input)}/>
-                </form>
+            </DateButtons>
+
+            <form>
+                <input placeholder="Search for date..." ref={input =>setDate(input)}/>
+            </form>
+
             <LikeButton>
                 <Button as='div' labelPosition='right'>
                     <Button icon>

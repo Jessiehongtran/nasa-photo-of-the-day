@@ -1,10 +1,18 @@
 import styled from "styled-components";
 
+export const DateButtons = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`
+
 export const FirstDateButton = styled.div`
-    margin: 20px;
+    margin: 5px;
+    padding-bottom: 30px;
 `
 export const SecondDateButton = styled.div`
-    margin: 20px;
+    margin: 5px;
+    padding-bottom: 30px;
 `
 
 export const LikeButton = styled.div`
