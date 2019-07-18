@@ -8,15 +8,16 @@ function PhotoGrid(){
     const [photos, setPhotos] = useState([]);
     const [date, setDate] = useState("2012-02-14")
     
-    useEffect(()=>{
-        axios 
-            .get(`https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=${date}`)
-            .then(response => {
-                console.log('response', response)
-                const planet = response.data.url;
-                setPhotos(planet)
-            })
-    },[date]);
+    // useEffect(()=>{
+    //     axios 
+    //         .get(`https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=${date}`)
+    //         .then(response => {
+    //             console.log('response', response)
+    //             const planet = response.data.url;
+    //             setPhotos(planet)
+    //         })
+    // },[date]);
+
 
 
     return (

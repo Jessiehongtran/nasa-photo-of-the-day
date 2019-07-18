@@ -1,18 +1,18 @@
 import React from "react";
 import "./App.css";
 import PhotoGrid from "./Components/PhotoGrid"
+import {Header, Tagline} from "./Components/Style"
 
 
 function App() {
   return (
     <div className="App">
-      <h1>
+      <Header>
       Astronomy is amazing
-      </h1>
-      <p>That's why we have captured these moments for discovering</p>
-      <p>
-      Photos of the day
-      </p>
+      </Header>
+      <Tagline>
+      That's why we've saved these moments
+      </Tagline>
       <PhotoGrid/>
     </div>
   );
