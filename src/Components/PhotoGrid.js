@@ -1,6 +1,8 @@
 import React, { useEffect, useState} from "react";
 import axios from "axios";
 import PhotoCard from "./PhotoCard";
+import { Button, Icon, Label } from 'semantic-ui-react'
+import {LikeButton} from "./Style"
 
 function PhotoGrid(){
     const [photos, setPhotos] = useState([]);
@@ -19,15 +21,27 @@ function PhotoGrid(){
 
     return (
         <div className = "photo-grid">
-        {/* <button onClick={(date)=>setDate(date -1)}>back</button> */}
-        <button onClick={()=>setDate('2012-02-14')}>2012-02-14</button>
-        <button onClick={()=>setDate('2012-02-15')}>2012-02-15</button>
-        {/* <button onClick={(date)=>setDate(date +1)}>next</button> */}
-            <form>
-                <input placeholder="Search for date..." ref={input =>setDate(input)}/>
-            </form>
-        <PhotoCard key = {setPhotos} imgUrl = {photos}/>
-        </div>
+            {/* <button onClick={(date)=>setDate(date -1)}>back</button> */}
+            <button onClick={()=>setDate('2012-02-14')}>2012-02-14</button>
+            <button onClick={()=>setDate('2012-02-15')}>2012-02-15</button>
+            {/* <button onClick={(date)=>setDate(date +1)}>next</button> */}
+                <form>
+                    <input placeholder="Search for date..." ref={input =>setDate(input)}/>
+                </form>
+            <LikeButton>
+                <Button as='div' labelPosition='right'>
+                    <Button icon>
+                        <Icon name='heart' />
+                        Like
+                    </Button>
+                    <Label as='a' basic pointing='left'>
+                        2,048
+                    </Label>
+                </Button>
+            </LikeButton>
+
+            <PhotoCard key = {setPhotos} imgUrl = {photos}/>
+            </div>
     )
 }
 
