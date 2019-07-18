@@ -1,10 +1,18 @@
 import styled from "styled-components";
 
+export const FirstDateButton = styled.div`
+    margin: 20px;
+`
+export const SecondDateButton = styled.div`
+    margin: 20px;
+`
+
 export const LikeButton = styled.div`
   text-align: right
   margin-bottom: 10px;
   margin-right: 30px;
 `;
+
 
 export const Header = styled.h1`
   color: #8B0000;
