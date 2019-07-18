@@ -6,8 +6,9 @@ function App() {
   return (
     <div className="App">
       <h1>
-      Astronomy 
+      Astronomy is amazing
       </h1>
+      <p>That's why we have captured these moments for discovering</p>
       <p>
       Photos of the day
       </p>
