@@ -2,7 +2,7 @@ import React, { useEffect, useState} from "react";
 import axios from "axios";
 import PhotoCard from "./PhotoCard";
 import { Button, Icon, Label } from 'semantic-ui-react'
-import {DateButtons, FirstDateButton, SecondDateButton, LikeButton} from "./Style"
+import {DateButtons, BackDateButton, FirstDateButton, SecondDateButton, NextDateButton, LikeButton} from "./Style"
 
 function PhotoGrid(){
     const [title, setTitle]  = useState([]);
@@ -21,29 +21,46 @@ function PhotoGrid(){
             })
     },[date]);
 
+    var today = new Date('2012-02-14')
+    var yesterday = new Date(today.getTime() - 24 * 60 * 60 * 1000)
+    var theFollowingday = new Date(today.getTime() + 2 * 24 * 60 * 60 * 1000)
 
 
     return (
         <div className = "photo-grid">
             <DateButtons>
-            {/* <button onClick={(date)=>setDate(date -1)}>back</button> */}
-            <FirstDateButton>
-                <Button animated='fade'>
-                    <Button.Content visible onClick={()=>setDate('2012-02-14')}>2012-02-14</Button.Content>
-                    <Button.Content hidden>Ready?</Button.Content>
-                </Button>
-            </FirstDateButton>
+                <BackDateButton>
+                    <Button animated='fade'>
+                        <Button.Content visible onClick={()=>setDate(yesterday)}>Back</Button.Content>
+                        <Button.Content hidden>Ready?</Button.Content>
+                    </Button>
+                </BackDateButton>
+                {/* <button onClick={()=>setDate(yesterday)}>back</button> */}
 
-            <SecondDateButton>
-                <Button animated='fade'>
-                    <Button.Content visible onClick={()=>setDate('2012-02-15')}>2012-02-15</Button.Content>
-                    <Button.Content hidden>Ready?</Button.Content>
-                </Button>
-            </SecondDateButton>
+                <FirstDateButton>
+                    <Button animated='fade'>
+                        <Button.Content visible onClick={()=>setDate('2012-02-14')}>2012-02-14</Button.Content>
+                        <Button.Content hidden>Ready?</Button.Content>
+                    </Button>
+                </FirstDateButton>
 
-            {/* <button onClick={()=>setDate('2012-02-14')}>2012-02-14</button> */}
-            {/* <button onClick={()=>setDate('2012-02-15')}>2012-02-15</button> */}
-            {/* <button onClick={(date)=>setDate(date +1)}>next</button> */}
+                <SecondDateButton>
+                    <Button animated='fade'>
+                        <Button.Content visible onClick={()=>setDate('2012-02-15')}>2012-02-15</Button.Content>
+                        <Button.Content hidden>Ready?</Button.Content>
+                    </Button>
+                </SecondDateButton>
+
+                <NextDateButton>
+                    <Button animated='fade'>
+                        <Button.Content visible onClick={()=>setDate(theFollowingday)}>Next</Button.Content>
+                        <Button.Content hidden>Ready?</Button.Content>
+                    </Button>
+                </NextDateButton>
+
+                {/* <button onClick={()=>setDate('2012-02-14')}>2012-02-14</button> */}
+                {/* <button onClick={()=>setDate('2012-02-15')}>2012-02-15</button> */}
+              
             </DateButtons>
 
             <form>

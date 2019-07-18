@@ -5,12 +5,20 @@ export const DateButtons = styled.div`
     justify-content: center;
     align-items: center;
 `
+export const BackDateButton = styled.div`
+    margin: 5px;
+    padding-bottom: 30px;
+`
 
 export const FirstDateButton = styled.div`
     margin: 5px;
     padding-bottom: 30px;
 `
 export const SecondDateButton = styled.div`
+    margin: 5px;
+    padding-bottom: 30px;
+`
+export const NextDateButton = styled.div`
     margin: 5px;
     padding-bottom: 30px;
 `
