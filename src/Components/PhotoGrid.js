@@ -5,18 +5,21 @@ import { Button, Icon, Label } from 'semantic-ui-react'
 import {LikeButton} from "./Style"
 
 function PhotoGrid(){
+    const [title, setTitle]  = useState([]);
     const [photos, setPhotos] = useState([]);
     const [date, setDate] = useState("2012-02-14")
     
-    // useEffect(()=>{
-    //     axios 
-    //         .get(`https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=${date}`)
-    //         .then(response => {
-    //             console.log('response', response)
-    //             const planet = response.data.url;
-    //             setPhotos(planet)
-    //         })
-    // },[date]);
+    useEffect(()=>{
+        axios 
+            .get(`https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=${date}`)
+            .then(response => {
+                console.log('response', response)
+                const planetName = response.data.title;
+                setTitle(planetName)
+                const planet = response.data.url;
+                setPhotos(planet)
+            })
+    },[date]);
 
 
 
@@ -41,7 +44,7 @@ function PhotoGrid(){
                 </Button>
             </LikeButton>
 
-            <PhotoCard key = {setPhotos} imgUrl = {photos}/>
+            <PhotoCard title = {title} imgUrl = {photos} />
             </div>
     )
 }
