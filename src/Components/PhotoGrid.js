@@ -40,15 +40,19 @@ function PhotoGrid(){
                 {/* <button onClick={()=>setDate(yesterday)}>back</button> */}
 
                 <FirstDateButton>
-                    <Button animated='fade'>
-                        <Button.Content visible onClick={()=>setDate('2012-02-14')}>2012-02-14</Button.Content>
+                    <Button animated='fade' onClick={()=>setDate('2012-02-14')}>
+                        <Button.Content visible >2012-02-14</Button.Content>
                         <Button.Content hidden>{title}</Button.Content>
                     </Button>
                 </FirstDateButton>
 
                 <SecondDateButton>
-                    <Button animated='fade'>
-                        <Button.Content visible onClick={()=>setDate('2012-02-15')}>2012-02-15</Button.Content>
+                    <Button animated='fade'onClick={()=> 
+                        { 
+    
+                        setDate('2012-02-15')}}>
+                        <Button.Content visible>2012-02-15</Button.Content>
+                        
                         <Button.Content hidden>{title}</Button.Content>
                     </Button>
                 </SecondDateButton>
@@ -81,7 +85,7 @@ function PhotoGrid(){
                 </Button>
             </LikeButton>
 
-            <PhotoCard title = {title} imgUrl = {photos} />
+            <PhotoCard title = {title} imgUrl = {photos}/>
         </div>
     )
 }
